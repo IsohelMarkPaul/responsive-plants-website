@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--=============== REMIX ICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/css/productStyle.css">
+    <!-- Stylesheet for the header -->
+    
+        <link rel="stylesheet" href="/assets/css/styles.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            
+        }
+
+        form {
+            
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 700px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, textarea {
+            width: 100%;
+            height: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                <i class="ri-leaf-line nav__logo-icon"></i> Plantex
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="/index.html#home" class="nav__link ">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/index.html#about" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/index.html#products" class="nav__link active-link">Products</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/index.html#faqs" class="nav__link">FAQs</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/index.html#contact" class="nav__link">Contact Us</a>
+                    </li>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+
+            <div class="nav__btns">
+                <!-- Theme change button -->
+                <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <form id="editForm">
+        <!-- Input fields for editing product information -->
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" name="productName" required>
+
+        <label for="productPrice">Product Price:</label>
+        <input type="text" id="productPrice" name="productPrice" required>
+
+        <label for="productDescription">Product Description:</label>
+        <textarea id="productDescription" name="productDescription" required></textarea>
+
+        <button type="submit">Save Changes</button>
+    </form>
+  
+     <!--=============== MAIN JS ===============-->
+     <script src="assets/js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    // Fetch the selected product from localStorage
+    const selectedProduct = JSON.parse(localStorage.getItem('selectedProduct')) || {};
+
+    // Populate the form with the selected product information
+    document.getElementById('productName').value = selectedProduct.title || '';
+    document.getElementById('productPrice').value = selectedProduct.price || '';
+    document.getElementById('productDescription').value = selectedProduct.description || '';
+
+    // Handle form submission
+    document.getElementById('editForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // Update the selected product information
+        selectedProduct.title = document.getElementById('productName').value;
+        selectedProduct.price = document.getElementById('productPrice').value;
+        selectedProduct.description = document.getElementById('productDescription').value;
+
+        // Update the selected product in localStorage
+        localStorage.setItem('selectedProduct', JSON.stringify(selectedProduct));
+
+        // Redirect to the product page or any other appropriate page
+        window.location.href = '/product-page.html';  
+    });
+});
+    </script>
+</body>
+
+</html>

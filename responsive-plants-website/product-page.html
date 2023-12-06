@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product info</title>
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--=============== REMIX ICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/css/productStyle.css">
+    <!-- Stylesheet for the header -->
+    <div id="header-styles-container">
+        <link rel="stylesheet" href="/assets/css/styles.css">
+    </div>
+    
+    <!---Boxicons CDN Setup for icons-->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                <i class="ri-leaf-line nav__logo-icon"></i> Plantex
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="/index.html#home" class="nav__link ">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/index.html#about" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/index.html#products" class="nav__link active-link">Products</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/index.html#faqs" class="nav__link">FAQs</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/index.html#contact" class="nav__link">Contact Us</a>
+                    </li>
+                </ul>
+
+                <div class="nav__close" id="nav-close">
+                    <i class="ri-close-line"></i>
+                </div>
+            </div>
+
+            <div class="nav__btns">
+                <!-- Theme change button -->
+                <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container" id="products">
+        <div class="single-product">
+            <div class="row">
+                <div class="col-6">
+                    <div class="product-image">
+                        <div class="product-image-main">
+                            <img src="/responsive-plants-website/assets/img/product1.png" alt="" id="product-main-image">
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="breadcrumb">
+                        <span><a href="/index.html#home">Home</a></span>
+                        <span><a href="/index.html#products">Product</a></span>
+                        <span class="active .product-title">Plant</span>
+                    </div>
+
+                    <div class="product">
+                        <div class="product-title">
+                            <h2></h2>
+                        </div>
+                        <div class="product-rating">
+                            <span><i class="bx bxs-star"></i></span>
+                            <span><i class="bx bxs-star"></i></span>
+                            <span><i class="bx bxs-star"></i></span>
+                            <span><i class="bx bxs-star"></i></span>
+                            <span><i class="bx bxs-star"></i></span>
+                            <span class="review">(47 Review)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="offer-price">$99.00</span>
+                            <span class="sale-price">₱499.00</span>
+                        </div>
+
+                        <div class="product-details">
+                            <h3>Description</h3>
+                            <p id="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos est magnam quibusdam maiores sit perferendis minima cupiditate iusto earum repudiandae maxime vitae nostrum, ea cumque iste ipsa hic commodi tempore.</p>
+                        </div>
+                        
+                        
+                        <span class="divider"></span>
+
+                        <div class="product-btn-group">
+                            <div class="button buy-now"><i class='bx bxs-zap' ></i> Buy Now</div>
+                            <div class="button add-cart"><i class='bx bxs-cart' ></i> Add to Cart</div>
+                            <!--<div class="button heart"><i class='bx bxs-heart' ></i> Add to Wishlist</div> --> 
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <a href="/editProduct.html">edit</a>
+            </div>
+        </div>
+        
+    </div>
+    
+     <!--=============== SCROLL REVEAL ===============-->
+     <script src="assets/js/scrollreveal.min.js"></script>
+        
+     <!--=============== MAIN JS ===============-->
+     <script src="assets/js/main.js"></script>
+    <!--LOCAL STORAGE INFO ABOUT PRODUCT-->
+    <script>
+        // Retrieve product details from local storage
+        var storedProduct = localStorage.getItem('selectedProduct');
+    
+        if (storedProduct) {
+            // Parse the stored JSON string
+            var productInfo = JSON.parse(storedProduct);
+    
+            // Update product details on the page
+            document.getElementById('product-main-image').src = productInfo.imageSrc;
+            document.querySelector('.product-title h2').innerText = productInfo.title;
+            document.querySelector('.offer-price').innerText = productInfo.price;
+            document.getElementById('product-description').innerText = productInfo.description;
+            // Add other updates for description, etc., as needed
+        }
+    </script>
+
+<script>
+    // Check if styles.css is loaded, and add it to the header
+    var stylesCssLink = document.querySelector('#header-styles-container link');
+    if (stylesCssLink) {
+        document.head.appendChild(stylesCssLink.cloneNode(true));
+    }
+</script>
+
+<script>
+    // Create a style element for the products
+    var productsStyleElement = document.createElement('link');
+    productsStyleElement.rel = 'stylesheet';
+    productsStyleElement.href = '/responsive-plants-website/assets/css/productStyle.css';
+
+    // Append the style element to the head
+    document.head.appendChild(productsStyleElement);
+</script>
+
+    
+</body>
+</html>

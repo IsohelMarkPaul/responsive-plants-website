@@ -1,0 +1,62 @@
+[
+    {
+        "link": "/product-page.html",
+        "card": {
+            "imgSrc": "assets/img/product1.png",
+            "title": "Cacti Plant",
+            "price": "₱129.99",
+            "buttonIcon": "ri-shopping-bag-line",
+            "description": "Cacti are succulent plants native to the New World. Known for their thick stems and spiny leaves, they are adapted to thrive in dry environments."
+        }
+    },
+    {
+        "link": "/product-page.html",
+        "card": {
+            "imgSrc": "assets/img/product2.png",
+            "title": "Cactus Plant",
+            "price": "₱141.99",
+            "buttonIcon": "ri-shopping-bag-line",
+            "description": "Cactus plants are part of the Cactaceae family. They have thick stems that store water and sharp spines for protection."
+        }
+    },
+    {
+        "link": "/product-page.html",
+        "card": {
+            "imgSrc": "assets/img/product3.png",
+            "title": "Aloe Vera Plant",
+            "price": "₱725.99",
+            "buttonIcon": "ri-shopping-bag-line",
+            "description": "Aloe Vera is a succulent plant species. Known for its health benefits, it's often used in medicines and cosmetics."
+        }
+    },
+    {
+        "link": "/product-page.html",
+        "card": {
+            "imgSrc": "assets/img/product4.png",
+            "title": "Succulent Plant",
+            "price": "₱562.99",
+            "buttonIcon": "ri-shopping-bag-line",
+            "description": "Succulents are plants with fleshy, thickened leaves or stems that are adapted to store water. They are perfect for dry environments."
+        }
+    },
+    {
+        "link": "/product-page.html",
+        "card": {
+            "imgSrc": "assets/img/product5.png",
+            "title": "Succulent Plant",
+            "price": "₱330.99",
+            "buttonIcon": "ri-shopping-bag-line",
+            "description": "Succulents are plants with fleshy, thickened leaves or stems that are adapted to store water. They are perfect for dry environments."
+        }
+    },
+    {
+        "link": "/product-page.html",
+        "card": {
+            "imgSrc": "assets/img/product6.png",
+            "title": "Green Plant",
+            "price": "₱338.99",
+            "buttonIcon": "ri-shopping-bag-line",
+            "description": "Green plants are a broad category of plants that are known for their lush foliage. They add a touch of nature to any space."
+        }
+    }
+]
